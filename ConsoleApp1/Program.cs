@@ -37,20 +37,36 @@ namespace ConsoleApp1
             DateTime d = DateTime.Parse(ReadLine());
             WriteLine($"Вам {DateTime.Now.Year - d.Year} лет");*/
             //2.3Ввести свою дату рождения. Определить:
-            Write("Введите дату рождения: ");
-            DateTime d = DateTime.Parse(ReadLine());
-            WriteLine($"Вы родились в этот день недели: {d.DayOfWeek}");
-            WriteLine($"Порядковый номер дня: {d.DayOfYear}");
-            if (DateTime.IsLeapYear(d.Year))
-            {
-                Write("Вы родились в високосным году.");
+            /* Write("Введите дату рождения: ");
+             DateTime d = DateTime.Parse(ReadLine());
+             WriteLine($"Вы родились в этот день недели: {d.DayOfWeek}");
+             WriteLine($"Порядковый номер дня: {d.DayOfYear}");
+             if (DateTime.IsLeapYear(d.Year))
+             {
+                 WriteLine("Вы родились в високосным году.");
 
-            }
-            else { Write("Вы родились в невисокосном году."); }
-           // WriteLine($"Вам {d - }");
-            
+             }
+             else { WriteLine("Вы родились в невисокосном году."); }
+             DateTime nextBirthday = new DateTime(DateTime.Now.Year, d.Month, d.Day);
+             if (nextBirthday < DateTime.Now)
+             {
+                 nextBirthday = nextBirthday.AddYears(1);
+             }
+             int daysUntilNextBirthday = (nextBirthday - DateTime.Now).Days;
+             WriteLine($"Дней до дня рождения - {daysUntilNextBirthday}");
+
+             string nextBirthd = nextBirthday.ToString("dddd, dd MMMM yyyy");
+             WriteLine($"{nextBirthd}");
+             int age = DateTime.Now.Year - d.Year;
+             if (DateTime.Now < d.AddYears(age)) age--;
+             WriteLine($"Полных лет - {age}");
+            */
+
             //в классе описано 1 поле - фамилия и др. в программ показывает сколько лет.
-            ReadKey();
+            DateTime age = new DateTime(2007, 2, 5);
+            Human human = new Human("Ривилис", age);
+            human.PrintFullYears();
+			ReadKey();
         }
     }
 }
